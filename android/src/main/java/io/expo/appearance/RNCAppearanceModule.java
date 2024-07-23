@@ -129,7 +129,7 @@ public class RNCAppearanceModule extends ReactContextBaseJavaModule implements L
             FLog.e(ReactConstants.TAG, "no activity to register receiver");
             return;
         }
-        activity.registerReceiver(mBroadcastReceiver, new IntentFilter("onConfigurationChanged"));
+        activity.registerReceiver(mBroadcastReceiver, new IntentFilter("onConfigurationChanged"), Context.RECEIVER_EXPORTED);
 
         // Send updated preferences to JS when the app is resumed, because we don't receive updates
         // when backgrounded
